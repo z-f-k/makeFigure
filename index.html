@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>人物画像</title>
+	</head>
+	<body>
+		<div id="figure" style="background-clip: text;-webkit-background-clip: text;color: transparent;word-break: break-all;line-height: 0.6;overflow: hidden;"></div>
+		<script>
+			function makeFigure(obj){
+				var ele = document.getElementById(obj.e);
+				ele.style.width = obj.width;
+				ele.style.height = obj.height;
+				ele.style.fontSize = obj.fontSize;
+				ele.style.backgroundImage = 'url('+obj.url+')';
+				
+				while( obj.character.length < 30000){
+					obj.character += obj.character;
+				}
+				ele.innerHTML = obj.character;
+			}
+			
+			var obj = {
+				e: 'figure',//id
+				character: 'Iloveyou', //显示字符
+				url: 'img/1.jpg',//图片地址
+				fontSize: '10px',//字符大小
+				width: '450px',
+				height: '544px',
+			}
+			makeFigure(obj);
+			
+		</script>
+	</body>
+</html>
